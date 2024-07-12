@@ -30,7 +30,13 @@ bin/
 
 # fabric
 
-run/
+run/config
+run/data
+run/downloads
+run/logs
+run/resourcepacks
+run/resources
+run/usercache.json
 
 # java
 
@@ -38,3 +44,7 @@ hs_err_*.log
 replay_*.log
 *.hprof
 *.jfr
+
+# personal
+
+notes.txt

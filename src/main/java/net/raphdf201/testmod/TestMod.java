@@ -12,7 +12,7 @@ public class TestMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		LOGGER.info("Hello Fabric world!");
 		ModItems.initialize();
+		LOGGER.info("Mod " + MODID + " initialized");
 	}
 }
