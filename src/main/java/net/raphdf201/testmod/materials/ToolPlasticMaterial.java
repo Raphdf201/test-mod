@@ -1,4 +1,4 @@
-package net.raphdf201.testmod.items;
+package net.raphdf201.testmod.materials;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.ToolMaterial;
@@ -6,7 +6,7 @@ import net.minecraft.recipe.Ingredient;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.TagKey;
 
-public class PlasticMaterial implements ToolMaterial {
+public class ToolPlasticMaterial implements ToolMaterial {
 	@Override
 	public int getDurability() {
 		return 69;
@@ -37,5 +37,5 @@ public class PlasticMaterial implements ToolMaterial {
 		return null;    // TODO : Petrol
 	}
 
-	public static final PlasticMaterial INSTANCE = new PlasticMaterial();
+	public static final ToolPlasticMaterial INSTANCE = new ToolPlasticMaterial();
 }
