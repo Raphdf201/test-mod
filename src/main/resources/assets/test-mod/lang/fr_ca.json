@@ -3,5 +3,6 @@
   "item.test-mod.plastic_sword": "Épée en plastique",
   "item.test-mod.plastic_bit": "Morceau de plastique",
   "item.test-mod.plastic_helmet": "Casque en plastique",
-  "item.test-mod.plastic_boots": "Bottes en plastique"
+  "item.test-mod.plastic_boots": "Bottes en plastique",
+  "itemgroup.petrol": "Pétrole"
 }

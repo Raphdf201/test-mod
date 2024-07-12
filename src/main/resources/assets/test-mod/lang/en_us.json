@@ -3,5 +3,6 @@
   "item.test-mod.plastic_sword": "Plastic sword",
   "item.test-mod.plastic_bit": "Plastic bit",
   "item.test-mod.plastic_helmet": "Plastic helmet",
-  "item.test-mod.plastic_boots": "Plastic boots"
+  "item.test-mod.plastic_boots": "Plastic boots",
+  "itemgroup.petrol": "Oil"
 }

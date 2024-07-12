@@ -1,15 +1,12 @@
 package net.raphdf201.testmod.items;
 
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.component.type.FoodComponent;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
-import net.minecraft.item.SwordItem;
+import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.raphdf201.testmod.TestMod;
 import net.raphdf201.testmod.materials.ToolPlasticMaterial;
@@ -40,6 +37,12 @@ public class ModItems {
 		Identifier itemID = Identifier.of(MODID, id);
 		return Registry.register(Registries.ITEM, itemID, item);
 	}
+
+	public static final RegistryKey<ItemGroup> PETROL_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(MODID, "item_group"));
+	public static final ItemGroup PETROL = FabricItemGroup.builder()
+			.icon(() -> new ItemStack(PLASTIC_BIT))
+			.displayName(Text.translatable("itemGroup.petrol"))
+			.build();
 
 	public static void initialize() {
 		// INGREDIENTS ITEMGROUP
