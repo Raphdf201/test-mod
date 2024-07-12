@@ -1,1 +1,1 @@
-https://docs.fabricmc.net/develop/items/first-item
+https://docs.fabricmc.net/develop/items/first-item#making-the-item-compostable-or-a-fuel
