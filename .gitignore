@@ -37,6 +37,7 @@ run/logs
 run/resourcepacks
 run/resources
 run/usercache.json
+run/command_history.txt
 
 # java
 
