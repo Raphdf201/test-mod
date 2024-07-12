@@ -11,9 +11,11 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.raphdf201.testmod.TestMod;
 
+import static net.raphdf201.testmod.TestMod.MODID;
+
 public class ModItems {
 	public static Item register(Item item, String id) {
-		Identifier itemID = Identifier.of(TestMod.MODID, id);
+		Identifier itemID = Identifier.of(MODID, id);
 		return Registry.register(Registries.ITEM, itemID, item);
 	}
 
