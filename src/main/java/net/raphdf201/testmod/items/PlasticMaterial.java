@@ -19,7 +19,7 @@ public class PlasticMaterial implements ToolMaterial {
 
 	@Override
 	public float getAttackDamage() {
-		return 0;
+		return 0.5f;
 	}
 
 	@Override
