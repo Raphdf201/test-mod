@@ -1,6 +1,0 @@
-/gamerule keepInventory true
-/summon minecraft:zombie
-/gamerule doImmediateRespawn true
-/summon minecraft:zombie
-/gamerule keepInventory
-/gamerule keepInventory true
