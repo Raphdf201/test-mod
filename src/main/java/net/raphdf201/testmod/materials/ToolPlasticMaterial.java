@@ -7,6 +7,8 @@ import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.TagKey;
 
 public class ToolPlasticMaterial implements ToolMaterial {
+	public static final ToolPlasticMaterial INSTANCE = new ToolPlasticMaterial();
+
 	@Override
 	public int getDurability() {
 		return 69;
@@ -36,6 +38,4 @@ public class ToolPlasticMaterial implements ToolMaterial {
 	public Ingredient getRepairIngredient() {
 		return null;    // TODO : Petrol
 	}
-
-	public static final ToolPlasticMaterial INSTANCE = new ToolPlasticMaterial();
 }

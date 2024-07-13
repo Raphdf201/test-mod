@@ -1,1 +1,1 @@
-https://docs.fabricmc.net/develop/items/custom-item-groups
+https://docs.fabricmc.net/develop/blocks/first-block#creating-and-registering-your-block

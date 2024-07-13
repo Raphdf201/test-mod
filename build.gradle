@@ -1,6 +1,7 @@
 plugins {
     id 'fabric-loom' version '1.7-SNAPSHOT'
     id 'maven-publish'
+    id "me.modmuss50.mod-publish-plugin" version "0.5.2"
 }
 
 version = project.mod_version
@@ -76,5 +77,33 @@ publishing {
         // Notice: This block does NOT have the same function as the block in the top level.
         // The repositories here will be used for publishing your artifact, not for
         // retrieving dependencies.
+    }
+}
+
+publishMods {   // TODO : Add tokens + secrets
+    file = remapJar.archiveFile
+    changelog = "Hello!"
+    type = STABLE
+    modLoaders.add("fabric")
+
+    curseforge {
+        projectId = "123456"
+        projectSlug = "example-project" // Required for discord webhook
+        accessToken = providers.environmentVariable("CURSEFORGE_TOKEN")
+        minecraftVersions.add("1.20.1")
+        requires("fabric-api")
+    }
+    modrinth {
+        projectId = "abcdef"
+        accessToken = providers.environmentVariable("MODRINTH_TOKEN")
+        minecraftVersions.add("1.20.1")
+    }
+    github {
+        repository = "test/example"
+        accessToken = providers.environmentVariable("GITHUB_TOKEN")
+        commitish = "main"
+    }
+    discord {
+        webhookUrl = providers.environmentVariable("DISCORD_WEBHOOK")
     }
 }

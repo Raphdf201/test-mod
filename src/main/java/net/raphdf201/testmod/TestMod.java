@@ -1,6 +1,7 @@
 package net.raphdf201.testmod;
 
 import net.fabricmc.api.ModInitializer;
+import net.raphdf201.testmod.blocks.ModBlocks;
 import net.raphdf201.testmod.items.ModItems;
 import net.raphdf201.testmod.materials.ModArmorMaterials;
 import org.slf4j.Logger;
@@ -14,8 +15,9 @@ public class TestMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		ModArmorMaterials.initialize();
+		ModArmorMaterials.initialize(); // Init before ModItems
+		ModBlocks.initialize();
 		ModItems.initialize();
-		LOGGER.info("Mod " + MODID + " initialized");
+		LOGGER.info(MODID + " initialized");
 	}
 }
