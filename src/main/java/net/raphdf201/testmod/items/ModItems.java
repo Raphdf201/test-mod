@@ -32,30 +32,37 @@ public class ModItems {
 	public static final Item PLASTIC_BOOTS = register(
 			new ArmorItem(ModArmors.PLASTIC, ArmorItem.Type.BOOTS, new Item.Settings()), "plastic_boots"
 	);
+	public static final RegistryKey<ItemGroup> PETROL_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(MODID, "item_group"));
+	public static final ItemGroup PETROL = FabricItemGroup.builder()
+			.icon(() -> new ItemStack(PLASTIC_BIT))
+			.displayName(Text.translatable("itemgroup.petrol"))
+			.build();
 
 	public static Item register(Item item, String id) {
 		Identifier itemID = Identifier.of(MODID, id);
 		return Registry.register(Registries.ITEM, itemID, item);
 	}
 
-	public static final RegistryKey<ItemGroup> PETROL_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(MODID, "item_group"));
-	public static final ItemGroup PETROL = FabricItemGroup.builder()
-			.icon(() -> new ItemStack(PLASTIC_BIT))
-			.displayName(Text.translatable("itemGroup.petrol"))
-			.build();
-
 	public static void initialize() {
-		// INGREDIENTS ITEMGROUP
+		Registry.register(Registries.ITEM_GROUP, PETROL_KEY, PETROL);
+
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS)
-				.register((itemGroup) -> itemGroup.add(SUS_SUBSTANCE));
-		ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS)
-				.register((itemGroup) -> itemGroup.add(PLASTIC_BIT));
-		// COMBAT ITEMGROUP
+				.register((itemGroup) -> {
+					itemGroup.add(SUS_SUBSTANCE);
+					itemGroup.add(PLASTIC_BIT);
+				});
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
-				.register((itemGroup) -> itemGroup.add(PLASTIC_SWORD));
-		ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
-				.register((itemGroup) -> itemGroup.add(PLASTIC_HELMET));
-		ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
-				.register((itemGroup) -> itemGroup.add(PLASTIC_BOOTS));
+				.register((itemGroup) -> {
+					itemGroup.add(PLASTIC_SWORD);
+					itemGroup.add(PLASTIC_HELMET);
+					itemGroup.add(PLASTIC_BOOTS);
+				});
+		ItemGroupEvents.modifyEntriesEvent(PETROL_KEY).
+				register((itemGroup) -> {
+					itemGroup.add(PLASTIC_HELMET);
+					itemGroup.add(PLASTIC_BOOTS);
+					itemGroup.add(PLASTIC_SWORD);
+					itemGroup.add(PLASTIC_BIT);
+				});
 	}
 }
